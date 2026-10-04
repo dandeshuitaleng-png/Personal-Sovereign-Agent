@@ -1,0 +1,50 @@
+{
+  "name": "personal-sovereign-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.19.0 <25"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"tsx watch src/server/index.ts\" \"vite --host 127.0.0.1\"",
+    "build": "tsc -p tsconfig.server.json && vite build",
+    "start": "node dist/server/server/index.js",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "verify": "node --import tsx src/server/verify.ts",
+    "test:browser": "npm run build && node tests/browser.mjs",
+    "format": "prettier --write src tests vite.config.ts",
+    "test:real": "npm run build && node tests/real-model.mjs"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.1.2",
+    "@fastify/multipart": "10.1.2",
+    "@fastify/static": "10.1.5",
+    "adm-zip": "0.6.1",
+    "cheerio": "1.2.0",
+    "docx": "9.8.1",
+    "fastify": "5.12.5",
+    "ipaddr.js": "2.5.0",
+    "lucide-react": "1.52.0",
+    "mammoth": "1.13.0",
+    "pdfjs-dist": "6.4.299",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "undici": "8.11.2",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/adm-zip": "0.5.8",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "concurrently": "10.0.5",
+    "prettier": "3.9.9",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.2"
+  }
+}

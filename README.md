@@ -307,3 +307,26 @@ PSA's ultimate goal is to establish a personal digital agency relationship that 
 #### The infrastructure may change
 
 #### The Agent should remain yours
+
+---
+
+## Local Application · v0.1
+
+A working local implementation of the white paper's first-stage research workflow is now included. It provides an encrypted personal vault, persistent owner and agent identities, source-based research with explicit authorization, editable long-term memory, Markdown/Word exports, signed result verification and portable encrypted backups. All application pages are in English; generated documents support English or Chinese.
+
+```sh
+npm ci
+npm run build
+npm start
+```
+
+Open **http://127.0.0.1:4318**, create your vault, then configure and test a model in Settings. The server runs on your computer and listens on loopback only.
+
+- [Getting started and model setup](docs/GETTING_STARTED.md)
+- [Ownership, security and current limits](docs/SECURITY.md)
+- [Local API contract](docs/API.md)
+- [Validation and acceptance evidence](docs/VERIFICATION.md)
+
+The existing English white paper and Word document remain the project's conceptual specification. This first release implements bounded local research, memory and cryptographic verification. Blockchain identity anchoring, wallets, payments, automatic web search, an agent marketplace and multiple accounts are future stages.
+
+Vault contents, credentials, personal source files and actual research results are excluded from the public repository. Keep `.psa-data/` and encrypted backups private.
